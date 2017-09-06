@@ -1,0 +1,22 @@
+import drcasa.*
+
+test "Frank contrae malaria" {
+
+	var frank = new Persona(0, 36 , 3500000)
+	var malaria = new EnfermedadInfecciosa(800)
+	
+	frank.contraerEnfermedad(malaria)
+	
+	assert.that(frank.enfermedades().contains(malaria))
+
+}
+
+test "Se reproduce malaria de logan" {
+		
+	var malaria = new EnfermedadInfecciosa(500)
+	
+	malaria.reproducirse()
+	
+	assert.equals(1000, malaria.celulasAmenazadas())
+}
+	
